@@ -47,6 +47,10 @@
     [BPUtils enableDebugOutput:![BPUtils isBuildScript]];
     [BPUtils quietMode:[BPUtils isBuildScript]];
     self.config.quiet = [BPUtils isBuildScript];
+    [BPUtils printInfo:INFO withString:@"setup config.xcTestRunDict: %@", config.xcTestRunDict];
+    [BPUtils printInfo:INFO withString:@"setup config.appBundlePath: %@", config.appBundlePath];
+    [BPUtils printInfo:INFO withString:@"setup config.additionalUnitTestBundles: %@", config.additionalUnitTestBundles];
+    [BPUtils printInfo:INFO withString:@"setup config.additionalUITestBundles: %@", config.additionalUITestBundles];
 }
 
 - (void)tearDown {

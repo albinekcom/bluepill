@@ -92,7 +92,10 @@
 
     BPApp *app = [[BPApp alloc] init];
     NSMutableArray<BPXCTestFile *> *allTests = [[NSMutableArray alloc] init];
-
+    [BPUtils printInfo:INFO withString:@"config.xcTestRunDict: %@", config.xcTestRunDict];
+    [BPUtils printInfo:INFO withString:@"config.appBundlePath: %@", config.appBundlePath];
+    [BPUtils printInfo:INFO withString:@"config.additionalUnitTestBundles: %@", config.additionalUnitTestBundles];
+    [BPUtils printInfo:INFO withString:@"config.additionalUITestBundles: %@", config.additionalUITestBundles];
     if (config.xcTestRunDict) {
         NSAssert(config.xcTestRunPath, @"");
         [BPUtils printInfo:INFO withString:@"Using xctestrun configuration"];
