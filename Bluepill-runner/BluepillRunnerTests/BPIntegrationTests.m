@@ -113,6 +113,7 @@
     self.config.numSims = @2;
     self.config.testBundlePath = nil;
     self.config.testRunnerAppPath = nil;
+    self.config.headlessMode = NO;
     NSString *runtime = [[NSString stringWithUTF8String:BP_DEFAULT_RUNTIME] stringByReplacingOccurrencesOfString:@"iOS " withString:@""];
     NSString *xcTestRunFile = [NSString stringWithFormat:@"BPSampleApp_iphonesimulator%@-x86_64.xctestrun", runtime];
     self.config.xcTestRunPath = [[[BPTestHelper derivedDataPath] stringByDeletingLastPathComponent] stringByAppendingPathComponent:xcTestRunFile];
@@ -150,6 +151,7 @@
     [BPUtils enableDebugOutput:![BPUtils isBuildScript]];
     [BPUtils quietMode:[BPUtils isBuildScript]];
     self.config.reuseSimulator = YES;
+    self.config.headlessMode = NO;
 
     NSError *err;
     BPApp *app = [BPApp appWithConfig:self.config
